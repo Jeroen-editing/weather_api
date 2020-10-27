@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The weather forcast</title>
+
+    <link rel="stylesheet" href="css/stylesheet.css">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@100;200;300;400;500;600;700;800;900&family=Heebo:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.typekit.net/une2ehx.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <!--Fav icon-->
+    <!--
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+    <link rel="manifest" href="/images/site.webmanifest">
+    <link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    -->
+    <!--End Fav icon-->
+
+    <!--<script src="keys.js"></script>-->
+</head>
+<body>
+    <div class="background">
+        <div class="d-flex flex-column h-100">
+            <div id="wpMain" class="container">
+                <div class="row">
+                    <div id="wpTitle" class="col text-center">
+                        <h1 class="title">The weather forcast<span class="app">app</span></h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <div id="wpCurrent" class="col fade">
+                        <div class="row">
+                            <div id="wpTemp" class="col-sm">
+                                <div class="d-flex flex-row location-box">
+                                    <div id="city" class="row col d-md-inline-block"></div>
+                                    <div id="location" class="row col d-md-inline-block"></div>
+                                </div>
+                                <div class="row col d-md-inline-block" id="dayTime"></div>
+                                <div class="row col d-md-inline-block" id="summary"></div>
+                                <div class="row col d-md-inline-block" id="currentTemp"></div>
+                            </div>
+                            <div class="d-flex flex-column justify-content-center weatherIcon">
+                                <img id="icon" class="img-fluid">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div id="wpConditions" class="col-md fade">
+                        <table class="conditions">
+                            <tr>
+                                <th class="titleCol" colspan="2">Conditions.</th>
+                            </tr>
+                            <tr class="tableRow">
+                                <th class="firstCol">Clouds :</th>
+                                <td class="secondCol" id="clouds"></td>
+                            </tr>
+                            <tr class="tableRow">
+                                <th class="firstCol">Humidity :</th>
+                                <td class="secondCol" id="humidity"></td>
+                            </tr>
+                            <tr class="tableRow">
+                                <th class="firstCol">Wind :</th>
+                                <td class="secondCol" id="wind"></td>
+                            </tr>
+                        </table>
+                        <table class="sun">
+                            <tr>
+                                <th class="titleCol" colspan="2">Morning and Evening.</th>
+                            </tr>
+                            <tr class="tableRow">
+                                <th class="firstCol">Sunrise :</th>
+                                <td class="secondCol" id="sunrise"></td>
+                            </tr>
+                            <tr class="tableRow">
+                                <th class="firstCol">Sunset :</th>
+                                <td class="secondCol" id="sunset"></td>
+                            </tr>
+                        </table>
+                        <!--
+                        <div class="row condition">
+                            <p class="col firstCol">Clouds : </p>
+                            <div id="clouds" class="col secondCol"></div>
+                        </div>
+                        <div class="row condition">
+                            <p class="col firstCol">Humidity : </p>
+                            <div id="humidity" class="col secondCol"></div>
+                        </div>
+                        <div class="row condition">
+                            <p class="col firstCol">Wind : </p>
+                            <div id="wind" class="col secondCol"></div>
+                        </div>
+                        <div class="row break"></div>
+                        <div class="row sun">
+                            <p class="col firstCol">Sunrise :</p>
+                            <div id="sunrise" class="col secondCol"></div>
+                        </div>
+                        <div class="row sun">
+                            <p class="col firstCol">Sunset :</p>
+                            <div id="sunset" class="col secondCol"></div>
+                        </div>
+                        -->
+                    </div>
+                    <div id="wpForecast" class="col-md fade">
+                        <!-- Nav tabs -->
+                        <ul class="nav nav-tabs" id="forecastTab"  role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="daily-tab" data-toggle="tab" href="#daily"  role="tab" aria-controls="daily" aria-selected="true">Hourly</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="weekly-tab" data-toggle="tab" href="#weekly" role="tab" aria-controls="weekly" aria-selected="false">Weekly</a>
+                            </li>
+                        </ul>
+
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                            <div class="tab-pane container fade show active" id="daily" role="tabpanel" aria-labelledby="daily-tab">
+                                <table class="hourly_predictions" id="dailyForecast" width=100%>
+
+                                </table>
+                            </div>
+                            <div class="tab-pane container fade" id="weekly" role="tabpanel" aria-labelledby="weekly-tab">
+                                <table class="week_predictions" id="weeklyForecast" width=100%>
+
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div id="wpFooter" class="col text-center fade">
+                        <div class="row">
+                            <div class="col-md source" id="source">
+                                Powered by - <a href="https://openweathermap.org/" target="_blank">OpenWeatherMap</a>
+                                - & - <a href="https://developer.mapquest.com/" target="_blank">Developer.mapquest</a> -
+                            </div>
+                            <div class="col-md developer" id="developer">
+                                Developed by - <a href="#" target="_blank">Jeroen De Vos</a> -
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="start_screen" id="startScreen">
+        <h3 class="alert_text" id="alert"></h3>
+        <div class="geo_location box_visible" id="geoLocPopUp">
+            <h3 class="location_subtitle">Your location:</h3>
+            <h3 class="location_title" id="popUpTitle"></h3>
+        </div>
+        <div class="enter_location box_hidden" id="EnterLocPopUp">
+            <h3 class="location_subtitle">Enter your location:</h3>
+            <div class="input_row">
+                <input type="text" class="location_input" id="city_input">
+                <input type="submit" value="Search" id="city_input_btn">
+            </div>
+        </div>
+        <div class="degrees" id="degrees">
+            <h3 class="degrees_title">Measure temperature in:</h3>
+            <div class="degrees_btns" id="degBtns">
+                <input type="button" class="deg_btn" id="cel_btn" value="Celcius">
+                <button class="deg_btn" id="kel_btn">Kelvin</button>
+                <button class="deg_btn" id="fahr_btn">Fahrenheit</button>
+            </div>           
+        </div>
+    </div>
+
+    <script src="weather.js"></script>
+</body>
+</html>
