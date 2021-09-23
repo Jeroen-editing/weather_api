@@ -143,7 +143,7 @@ function fetchWeatherReport(latitude, longitude, units, degrees, speed) {
     //to avoid the cors issue you need to run through a proxy or make the call server side.
     let openWeatherKey = "5b19bcf47d77f928af2658214b6a10af";
     let proxyLink = `https://cors-anywhere.herokuapp.com/`;
-    let openWeatherLink = `${proxyLink}https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&units=${units}&exclude=minutely&appid=${openWeatherKey}`;
+    let openWeatherLink = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&units=${units}&exclude=minutely&appid=${openWeatherKey}`;
 
     fetch(openWeatherLink)
         .then(response => {

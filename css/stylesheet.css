@@ -249,7 +249,7 @@ body {
   #wpConditions .conditions {
     font-size: 1.1em; }
   #wpConditions .sun {
-    margin-top: 12px;
+    margin-top: 20px;
     font-size: .9em; }
   #wpConditions .titleCol {
     font-size: 1.2em;
@@ -285,32 +285,34 @@ body {
 
 #forecastTab {
   width: 100%;
-  border-bottom: 0.14em solid #412b11; }
+  border-bottom: 0.14em solid #412b11;
+  border: 0.14em solid #412b11;
+  border-radius: 4px;
+  overflow: hidden; }
 
 #forecastTab li {
-  width: 120px;
-  margin-right: 1px; }
+  width: 50%; }
 
 #forecastTab li a {
-  padding: 4px 0;
+  height: 36px;
+  padding: 5px 0 0 0;
   color: black;
   font-weight: 400;
   letter-spacing: 1px;
-  text-align: center; }
+  text-align: center;
+  background-color: rgba(65, 43, 17, 0.4);
+  border: none;
+  border-radius: 0px; }
 
 #forecastTab li a:hover {
-  padding: 4px 0;
+  color: black;
   color: #fcfcfc;
-  background-color: rgba(65, 43, 17, 0.6);
-  border: 0.14em solid #412b11;
-  border-bottom: none; }
+  background: transparent; }
 
 #forecastTab li a.active {
-  padding: 4px 0;
-  color: #0d344b;
-  background-color: #aa9e7e;
-  border: 0.14em solid #412b11;
-  border-bottom: none; }
+  color: #081f2c;
+  background-color: rgba(170, 158, 126, 0.6);
+  overflow: hidden; }
 
 .tab-content {
   margin: 0 0;
@@ -319,13 +321,13 @@ body {
 .hourly_predictions,
 .week_predictions {
   width: 106%;
-  margin: 12px 0 0 -15px;
+  margin: 8px 0 0 -15px;
   border-collapse: separate;
   border-spacing: 4px;
   letter-spacing: 1px;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8), -1px -1px 2px rgba(0, 0, 0, 0.8);
-  background: rgba(170, 158, 126, 0.4);
-  border: 0.12em solid rgba(65, 43, 17, 0.8);
+  background: rgba(65, 43, 17, 0.4);
+  border: 0.14em solid #412b11;
   border-radius: 4px; }
   .hourly_predictions thead th,
   .week_predictions thead th {

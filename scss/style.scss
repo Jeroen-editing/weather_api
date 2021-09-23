@@ -295,7 +295,7 @@ body {
         font-size: 1.1em;
     }
     .sun {
-        margin-top: 12px;
+        margin-top: 20px;
         font-size: .9em;
     }
     .titleCol {
@@ -338,31 +338,33 @@ body {
 #forecastTab {
     width: 100%;
     border-bottom: .14em solid rgb(65, 43, 17);
+    border: .14em solid rgb(65, 43, 17);
+    border-radius: 4px;
+    overflow: hidden;
 }
 #forecastTab li {
-    width: 120px;
-    margin-right: 1px;
+    width: 50%;
 }
 #forecastTab li a {
-    padding: 4px 0;
+    height: 36px;
+    padding: 5px 0 0 0;
     color: black;
     font-weight: 400;
     letter-spacing: 1px;
     text-align: center;
+    background-color: rgba(65, 43, 17, 0.4);
+    border: none;
+    border-radius: 0px;
 }
 #forecastTab li a:hover {
-    padding: 4px 0;
+    color: black;
     color: $text;
-    background-color: rgba(65, 43, 17, 0.6);;
-    border: .14em solid rgb(65, 43, 17);
-    border-bottom: none;
+    background: transparent;
 }
 #forecastTab li a.active {
-    padding: 4px 0;
-    color: rgb(13, 52, 75);
-    background-color: rgb(170, 158, 126);
-    border: .14em solid rgb(65, 43, 17);
-    border-bottom: none;
+    color: rgb(8, 31, 44);
+    background-color: rgba(170, 158, 126, 0.6);
+    overflow: hidden;
 }
 .tab-content {
     margin: 0 0;
@@ -372,14 +374,13 @@ body {
 .hourly_predictions,  
 .week_predictions {
     width: 106%;
-    margin: 12px 0 0 -15px;
-    //margin: 6px 0 0 20px;
+    margin: 8px 0 0 -15px;
     border-collapse: separate;
     border-spacing: 4px;
     letter-spacing: 1px;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8), -1px -1px 2px rgba(0, 0, 0, 0.8);
-    background: rgba(170, 158, 126, .4);
-    border: .12em solid rgba(65, 43, 17, 0.8);
+    background: rgba(65, 43, 17, 0.4);
+    border: .14em solid rgb(65, 43, 17);
     border-radius: 4px;
 
     thead th {
