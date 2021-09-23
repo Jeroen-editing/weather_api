@@ -286,7 +286,7 @@ body {
 #forecastTab {
   width: 100%;
   border-bottom: 0.14em solid #412b11;
-  border: 0.14em solid #412b11;
+  border: 0.12em solid #412b11;
   border-radius: 4px;
   overflow: hidden; }
 
@@ -327,7 +327,7 @@ body {
   letter-spacing: 1px;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8), -1px -1px 2px rgba(0, 0, 0, 0.8);
   background: rgba(65, 43, 17, 0.4);
-  border: 0.14em solid #412b11;
+  border: 0.12em solid #412b11;
   border-radius: 4px; }
   .hourly_predictions thead th,
   .week_predictions thead th {
